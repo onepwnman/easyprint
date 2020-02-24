@@ -1,0 +1,72 @@
+{
+    "id": "anet-a8",
+    "version": 2,
+    "name": "Anet A8",
+    "inherits": "fdmprinter",
+    "metadata": {
+        "visible": true,
+        "author": "onepwnman",
+        "manufacturer": "Custom",
+        "category": "Custom",
+        "file_formats": "text/x-gcode",
+        "has_materials": true,
+        "first_start_actions": ["MachineSettingsAction"]
+    },
+    "overrides": {
+		"machine_gcode_flavor": { "default_value": "RepRap (Marlin/Sprinter)" },
+        "machine_width": { "default_value": 220 },
+        "machine_height": { "default_value": 220 },
+        "machine_depth": { "default_value": 220 },
+        "machine_heated_bed": { "default_value": true },
+        "machine_center_is_zero": { "default_value": false },
+        "gantry_height": { "default_value": 0 },
+        "machine_nozzle_size": { "default_value": 0.4 },
+        "machine_head_with_fans_polygon": { "default_value": [ [0, 0], [0, 0], [0, 0], [0, 0] ] },
+        "machine_start_gcode": {
+            "default_value": "G21\n;metric values\nG90\n;absolute positioning\nM82\n;set extruder to absolute mode\nM107\n;start with the fan off\nG28 X0 Y0\n;move X/Y to min endstops\nG28 Z0\n;move Z to min endstops\nG29\n; Auto Bed Levelling\nG1 Z15.0 F9000\n;move the platform down 15mm\nG92 E0\n;zero the extruded length\nG1 F200 E3\n;extrude 3mm of feed stock\nG92 E0\n;zero the extruded length again\nG1 F9000\n;Put printing message on LCD screen\nM117 Printing..0"
+		},
+
+		"machine_end_gcode": {
+			"default_value": "G91\n;relative positioning\nG1 E-1 F300\n;retract the filament a bit before lifting the nozzle, to release some of the pressure\nG1 Z+0.5 E-5 X-20 Y-20 F9000\n;move Z up a bit and retract filament\nG28 X0 Y0\n;move X/Y to min endstops, so the head is out of the way\nM84\n;steppers off\nG90\n;absolute positioning"
+		},
+
+          
+        "material_bed_temperature": { "default_value": 10 },
+        "material_bed_temperature_layer_0": { "default_value": 10 },
+        "material_diameter": { "default_value": 1.75 },
+        "layer_height": { "default_value": 0.2 },
+		"wall_thickness": { "default_value": 0.8 },
+        "material_print_temperature": { "default_value": 200 },
+        "default_material_print_temperature": { "default_value": 200 },
+        "material_print_temperature_layer_0": { "default_value": 200 },
+        "speed_print": { "default_value": 50 },
+		"infill_sparse_density": { "default_value": 20 },
+		"infill_pattern": { "default_value": "zigzag" },
+		"retraction_enable": { "default_value": true },
+		"acceleration_print": { "default_value": 1400 },
+		"acceleration_travel": { "default_value": 1400 },
+		"retraction_hop_enabled": {	"default_value": true },
+		"cool_fan_speed": { "default_value": 100 },
+		"cool_fan_speed_0": { "default_value": 100 },
+		"support_enable": { "default_value": true },
+		"support_type": { "default_value": "everywhere" },
+		"support_angle": { "default_value": 70 },
+		"adhesion_type": { "default_value": "skirt" },
+		"command_line_settings": {
+			"label": "Command Line Settings",
+			"description": "Settings which are only used if CuraEngine isn't called from the Cura frontend.",
+			"type": "category",
+			"enabled": true,
+			"children": {
+				"center_object": {
+				"description": "Whether to center the object on the middle of the build platform (0,0), instead of using the coordinate system in which the object was saved.",
+					"type": "bool",
+					"label": "Center object",
+					"default_value": true,
+					"enabled": true
+				}
+			}
+		}
+    }
+}
+

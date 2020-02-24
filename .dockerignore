@@ -1,0 +1,15 @@
+log/*
+.git
+.gitignore
+README.md
+LICENSE
+share
+.*.swp
+*.pyc
+*.egg/
+*.egg-info
+__pycache__
+.dockerignore
+Dockerfile*
+start.sh
+dump.rdb

@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <!-- content-main -->
+  <div class="content-wrapper custom-body-color">
+  <div class="content-main pt-4">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <!-- Notice Board -->
+          <div class="row-12">
+            <div class="card">
+              <h5 class="card-header">Notice</h5>
+              <div class="card-body">
+                <h5 class="card-title">Easyprint 사용법</h5>
+                <p class="card-text">원하는 모델링 파일을 올리고 결재후 출력하면 OK!</p>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModal">
+                  자세히
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Notice Board End -->
+          <!-- Drag & Drop Box -->	
+          <div class="row-12">
+            <div class="card card-light">
+              <div class="card-header">
+                <div class="card-title">
+                  Printing
+                </div>
+                <small>
+                  <a href="{{ url_for('home.index') }}" class="float-right">
+                    +더보기	
+                  </a>
+                </small>
+              </div>
+              <div class="card-body p-0">
+                <div class="card-content">
+                  <form action="{{ url_for('printer.validate_file') }}" class="dropzone" id="my-awesome-dropzone">
+                    <div class="dz-message text-dark">
+                      <strong><small>
+                        프린트할 파일을 올려 놓으세요. <br>
+                        출력 가능한 파일포맷은 .stl이며 파일 크기제한은 16MB입니다.
+                      </small></strong>
+                    </div>
+                  </form>
+                </div>
+              </div>
+							<!-- Show Modeling of the stl file -->
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">
+                  STL Viewer
+                  <button class="btn btn-sm float-right" id="reset"> 
+                    <i class="fas fa-sync-alt"></i>
+                  </button>
+                </li>
+							</ul>
+							<div id="model-wrapper" class="card-body p-0">
+								<div id="model" class="model-size"> </div>
+							</div>
+            </div>
+
+
+            
+          </div>
+          <!-- Drag & Drop Box End -->
+        </div>	
+        <div class="col-md-6 col-sm-12">
+          <!-- Gallery -->
+          <div class="row-12">
+            <div class="card card-light">
+              <div class="card-header">
+                <div class="card-title">
+                  갤러리
+                </div>
+                <small>
+                  <a href="{{ url_for('home.index') }}" class="float-right">
+                    +더보기	
+                  </a>
+                </small>
+              </div>
+              <div class="card-body">
+                <div class="row">
+
+                  <div class="col-6 col-sm-4 p-1">
+                    <div class="card border-dark">
+                      <a href="https://via.placeholder.com/1200/000000.png?text=2" data-toggle="lightbox" data-title="sample 2 - black" data-gallery="gallery">
+                        <img src="https://via.placeholder.com/300/000000?text=2" class="img-fluid mb-2" alt="black sample"/>
+                      </a>
+                      <div class="card-body">
+                        <p class="card-text">Some Random Title1</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 p-1">
+                    <div class="card border-dark">
+                      <a href="https://via.placeholder.com/1200/000000.png?text=2" data-toggle="lightbox" data-title="sample 2 - black" data-gallery="gallery">
+                        <img src="https://via.placeholder.com/300/000000?text=2" class="img-fluid mb-2" alt="black sample"/>
+                      </a>
+                      <div class="card-body">
+                        <p class="card-text">Some Random Title1</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 p-1">
+                    <div class="card border-dark">
+                      <a href="https://via.placeholder.com/1200/000000.png?text=2" data-toggle="lightbox" data-title="sample 2 - black" data-gallery="gallery">
+                        <img src="https://via.placeholder.com/300/000000?text=2" class="img-fluid mb-2" alt="black sample"/>
+                      </a>
+                      <div class="card-body">
+                        <p class="card-text">Some Random Title1</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 p-1">
+                    <div class="card border-dark">
+                      <a href="https://via.placeholder.com/1200/000000.png?text=2" data-toggle="lightbox" data-title="sample 2 - black" data-gallery="gallery">
+                        <img src="https://via.placeholder.com/300/000000?text=2" class="img-fluid mb-2" alt="black sample"/>
+                      </a>
+                      <div class="card-body">
+                        <p class="card-text">Some Random Title1</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 p-1">
+                    <div class="card border-dark">
+                      <a href="https://via.placeholder.com/1200/000000.png?text=2" data-toggle="lightbox" data-title="sample 2 - black" data-gallery="gallery">
+                        <img src="https://via.placeholder.com/300/000000?text=2" class="img-fluid mb-2" alt="black sample"/>
+                      </a>
+                      <div class="card-body">
+                        <p class="card-text">Some Random Title1</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 p-1">
+                    <div class="card border-dark">
+                      <a href="https://via.placeholder.com/1200/000000.png?text=2" data-toggle="lightbox" data-title="sample 2 - black" data-gallery="gallery">
+                        <img src="https://via.placeholder.com/300/000000?text=2" class="img-fluid mb-2" alt="black sample"/>
+                      </a>
+                      <div class="card-body">
+                        <p class="card-text">Some Random Title1</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Gallery End -->
+          <!-- Free Board -->
+          <div class="row-12">
+            <div class="card card-light">
+              <div class="card-header">
+                <div class="card-title">
+                  자유게시판
+                </div>
+                <small>
+                  <a href="{{ url_for('home.index') }}" class="float-right">
+                    +더보기	
+                  </a>
+                </small>
+              </div>
+              <div class="card-body p-0">
+                <div class="card-content">
+                  <ul class="list-group">
+                    <!-- TODO 동적으로 배지에 코맨트수 표기 -->
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <a href="{{ url_for('home.index') }}">
+                        어쩌구저쩌구1
+                      </a>
+                      <span class="badge badge-primary badge-pill custom-color">1</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <a href="{{ url_for('home.index') }}">
+                        어쩌구저쩌구1
+                      </a>
+                      <span class="badge badge-primary badge-pill custom-color">2</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <a href="{{ url_for('home.index') }}">
+                        어쩌구저쩌구1
+                      </a>
+                      <span class="badge badge-primary badge-pill custom-color">3</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <a href="{{ url_for('home.index') }}">
+                        어쩌구저쩌구1
+                      </a>
+                      <span class="badge badge-primary badge-pill custom-color">0</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>	
+          <!-- Free Board End -->
+        </div>	
+      </div>
+    </div>
+  </div>
+  <!-- Content-main End -->
+  </div>
+{% endblock %}
+
+

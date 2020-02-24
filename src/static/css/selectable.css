@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,600,800'); 
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\0000379}}
+  .file {
+    background-color: #607d8b;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; }
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\0000385}}
+    .file.dz-error {
+      background-color: #F44336; }
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\0000387}}
+      .file.dz-error svg {
+        background-color: #ea1c0d; }
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\0000393}}
+    .file.ui-selecting {
+      background-color: #4CAF50; }
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\0000395}}
+      .file.ui-selecting svg {
+        background-color: #3d8b40; }
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003101}}
+    .file.ui-selected {
+      background-color: #2196F3; }
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003103}}
+      .file.ui-selected svg {
+        background-color: #0c7cd5; }
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003109}}
+    .file:last-child {
+      margin-bottom: 0; }
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003116}}
+      .file .file-name {
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        font-family: "Roboto Mono";
+        font-weight: 300; }
+        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003125}}
+        .file .file-size {
+          font-family: "Roboto Mono";
+          font-weight: 300; }
+          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003130}}
+          .file .file-remove {
+            width: 5%; }
+            @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003132}}
+            .file .file-remove button {
+              font-size: 20px;
+              cursor: pointer;
+              background-color: transparent;
+              border: none;
+              padding: 0; }
+              @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003138}}
+              .file .file-remove button:hover {
+                color: #fff; }
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003146}}
+    .file .file-data {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-flow: column;
+      width: 40%; }
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003151}}
+      .file .file-info {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        flex-flow: column;
+        width: 45%; }
+        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003157}}
+        .file .file-progress {
+          width: 10%;
+          display: flex;
+          align-items: end;
+          justify-content: center;
+          flex-flow: column;
+          position: relative; }
+          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003173}}
+          .file.dz-complete .file-progress .mdi {
+            display: block; }
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003179}}
+    .file .file-progress-text {
+      text-align: right; }
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003183}}
+      .file svg {
+        background-color: #4b626d;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px; }
+        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003190}}
+        .file .radial-fill {
+          stroke: #fff;
+          fill: transparent;
+          stroke-dasharray: 87.96459 87.96459;
+          stroke-dashoffset: 87.96459; }
+          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003197}}
+          .file.uploading svg {
+            animation: none; }
+            @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003200}}
+            .file.uploading .radial-fill {
+              stroke-dashoffset: 87.96459;
+              animation: 2000ms linear 0ms 1 forwards load; }
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003207}}
+    .file.loading svg {
+      animation: 1000ms linear 0ms infinite forwards spin; }
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003210}}
+      .file.loading .radial-fill {
+        stroke-dashoffset: 35.18584; }
+
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003218}}
+  #removeFiles {
+    display: none; }
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003220}}
+    #removeFiles.active {
+      display: inline-block; }
+
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003226}}
+  .faded {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    font-family: "Roboto Mono";
+    font-weight: normal; }
+
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003233}}
+    @keyframes load {
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003233}}
+      0% {
+        stroke-dashoffset: 87.96459;   }
+        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003236}}
+        100% {
+          stroke-dashoffset: 0;   }
+}
+
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003242}}
+  @keyframes spin {
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003242}}
+    0% {
+      transform: rotate3d(0, 0, 1, 0deg);   }
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003245}}
+      100% {
+        transform: rotate3d(0, 0, 1, 360deg);   }
+}
+
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003251}}
+  #template {
+    display: none; }
+
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003256}}
+    #dropzone {
+      overflow: auto;
+      border: 3px dashed #607d8b;
+      padding: 10px 10px;
+      border-radius: 5px;
+      min-height: 230px;
+      position: relative; }
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003267}}
+      #dropzone.dz-drag-hover::after {
+        content: "Drop here";
+        background-color: rgba(255, 255, 255, 0.6); }
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003274}}
+      #dropzone::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-family: "Raleway";
+        font-weight: 700;
+        font-size: 50px;
+        color: #607d8b;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003289}}
+        #dropzone .drop-message {
+          font-weight: 500;
+          margin: 3em 0;
+          text-align: center;
+          color: #607d8b;
+          pointer-events: none; }
+          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003298}}
+          #dropzone .drop-disc {
+            font-weight: 300;
+            padding-top: 2em; }
+
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/onepwnman\/work\/project\/3DPrint_Server_bak\/src\/static\/scss\/selectable\.scss}line{font-family:\00003307}}
+  .animated {
+    animation-duration: 500ms; }

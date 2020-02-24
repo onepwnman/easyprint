@@ -1,0 +1,360 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/utils.html" as utils %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  {% include 'meta.html' %}
+  <title>Easyprint</title>
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to to the body tag
+to get the desired effect
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition">
+<div class="wrapper ">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand custom-navbar navbar-light shadow-sm">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" id="menu-btn"><i class="fas fa-bars"></i></a>
+      </li>
+		</ul>
+
+    <!-- navbar links -->
+    <ul class="navbar-nav ml-auto">
+			<!-- SEARCH FORM -->
+      <!--
+			<form class="form-inline ml-3">
+				<div class="input-group input-group-sm">
+					<input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+					<div class="input-group-append">
+						<button class="btn btn-navbar" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+
+				</div>
+			</form>
+      -->
+      <li class="nav-item d-sm-inline-block">
+        <a href="{{ url_for('home.index') }}" class="nav-link">
+          Home <i class="nav-icon fas fa-home"></i>
+        </a>
+      </li>
+      <li class="nav-item d-sm-inline-block usage nav-link">
+          Usage <i class="nav-icon far fa-file-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item d-sm-inline-block">
+        <a href="https://github.com/onepwnman" class="nav-link">
+          Contact <i class="nav-icon fas fa-phone-square-alt"></i>
+        </a>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown pr-3 pl-2" id="alarm-bell">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+        </a>
+        {% if (current_user.is_authenticated) and (alarm != 0) %}
+          <span class="badge badge-warning navbar-badge">{{ alarm }}</span>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-item dropdown-header">{{ alarm }} Notifications</span>
+            <div class="dropdown-divider"></div>
+            <a href="{{ url_for('printer.result') }}" class="dropdown-item checked-link">
+              <i class="fas fa-clipboard-check">Check it out! {{ alarm }} Printing Job is Done.</i> 
+            </a>
+            <a href="{{ url_for('printer.result') }}" class="dropdown-item dropdown-footer checked-link">See All Notifications</a>
+          </div>
+        {% endif %}
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar --> 
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4 custom-color">
+    <!-- Brand Logo -->
+		<div class="main-logo">
+			<a href="{{ url_for('home.index') }}" class="text-light">
+					<h1 class="text-center"> Easyprint</h1>
+			</a>
+		</div>
+
+    {% include 'login_form.html' %}
+
+    <!-- Sidebar -->
+    <div class="sidebar sidemenu">
+      <!-- Sidebar user panel (optional) -->
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-header">
+						MENU
+					</li>
+          {% if current_user.is_authenticated %}
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                마이페이지
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+							<li class="nav-item">
+								<a href="{{ url_for('auth.user_info') }}" class="nav-link">
+                  <i class="nav-icon fas fas fa-id-card"></i>
+									<p>
+									  내정보
+									</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="{{ url_for('printer.result') }}" class="nav-link">
+									<i class="nav-icon fas fa-clipboard-list"></i>
+									<p>
+								    프린팅결과	
+									</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="{{ url_for('auth.change_password') }}" class="nav-link">
+                  <i class="nav-icon fas fa-key"></i>
+									<p>
+								    비밀번호 변경
+									</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="{{ url_for('auth.delete_account') }}" class="nav-link">
+                  <i class="nav-icon fas fa-user-slash"></i> 
+									<p>
+									  회원탈퇴
+									</p>
+								</a>
+							</li>
+            </ul>
+          </li>
+          {% endif %}
+          {% if current_user.is_anonymous %}
+          <li class="nav-item">
+            <a href="{{ url_for('auth.register') }}" class="nav-link">
+              <i class="nav-icon fas fa-user-plus"></i>
+              <p>
+                회원가입
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('auth.find_my_info') }}" class="nav-link">
+              <i class="nav-icon fas fa-id-card"></i>
+              <p>
+                내정보찾기
+              </p>
+            </a>
+          </li>
+          {% endif %}
+          <li class="nav-item usage">
+            <a class="nav-link">
+              <i class="nav-icon far fa-file-alt"></i>
+              <p>
+							    사용법	
+              </p>
+						</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://github.com/onepwnman" class="nav-link">
+              <i class="nav-icon fas fa-phone-square-alt"></i>
+              <p>
+							    Contact
+              </p>
+            </a>
+          </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!--
+          <li class="nav-item">
+            <a href="{{ url_for('static', filename='pages/gallery.html') }}" class="nav-link">
+              <i class="nav-icon fas fa-image"></i>
+              <p>
+								갤러리
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('static', filename='pages/gallery.html') }}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+								자유게시판
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('static', filename='pages/gallery.html') }}" class="nav-link">
+              <i class="nav-icon fas fa-cubes"></i>
+              <p>
+								프린트
+              </p>
+            </a>
+          </li>
+          -->
+				</ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+	{% macro notify_messages() %}
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<script>
+						var noteType = {{ message|tojson() }}.type;
+						var noteTitle = {{ message|tojson() }}.title;
+						var noteText = {{ message|tojson() }}.text;
+						var noteIcon = {{ message|tojson() }}.icon;
+
+            notification(noteType, noteTitle, noteText, noteIcon);
+					</script>
+				{% endfor %}	
+			{% endif %}
+		{% endwith %}
+	{% endmacro %}
+
+  <!-- Content Wrapper. Contains page content -->
+  {% block content %} {% endblock %}
+	{{ notify_messages() }}	
+  <!-- /.content-wrapper -->
+
+
+
+
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+	<!-- Footer -->
+	<footer>
+		<!-- Footer Elements -->
+		<div class="container-fluid p2 p-md-2 pt-2 custom-color">
+		<!-- Social buttons -->
+			
+		<ul class="list-unstyled list-inline text-center text-dark mt-3">
+			<li class="list-inline-item">
+			<a class="btn-floating btn-tw mx-1 text-dark" href="https://twitter.com/EkqODCICmHS1BRz">
+				<i class="fab fa-twitter"> </i>
+			</a>
+			</li>
+			<li class="list-inline-item">
+			<a class="btn-floating btn-gplus mx-1 text-dark" href="onepwnman@gmail.com">
+				<i class="fab fa-google"> </i>
+			</a>
+			</li>
+			<li class="list-inline-item">
+			<a class="btn-floating btn-li mx-1 text-dark" href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile">
+				<i class="fab fa-linkedin-in"> </i>
+			</a>
+			</li>
+			<li class="list-inline-item">
+			<a class="btn-floating btn-li mx-1 text-dark" href="https://www.github.com/onepwnman">
+				<i class="fab fa-github"> </i>
+			</a>
+			</li>
+		</ul>
+		<!-- Social buttons -->
+
+		<!-- Copyright -->
+		<div class="footer-copyright text-center pt-1">
+		<span class="text-muted">
+			<small class="text-center">Copyright &copy; 2019-2020 <a href="https://github.com/onepwnman" class="text-light">onepwnman</a>.</small>
+		<span>
+		</div>
+			<div class="text-muted text-center">
+				All rights reserved.
+			</div>
+		<!-- Copyright -->
+		</div>
+		<!-- Footer Elements -->
+	</footer>
+</div>
+<!-- ./wrapper -->
+
+	<!-- REQUIRED SCRIPTS -->
+	{% include 'scripts.html' %}
+						<!-- Modal -->
+						<div class="modal fade" id="usage-modal" tabindex="-1" role="dialog" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">사용법</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+											Easyprint는 3D 프린팅을 위한 웹 인터페이스로 모델링파일을 슬라싱하여 gcode로 변환하고 변환된 gcode파일을 바로 프린트 할 수 있습니다.
+											업로드한 모델링파일을 3D Viewer를 통해 3D 모형으로 확인 할 수 있으며 출력중인 프린터의 모습을 웹캠으로 관찰 할 수있습니다.
+
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Modal End-->
+		
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

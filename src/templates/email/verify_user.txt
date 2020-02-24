@@ -1,0 +1,8 @@
+반갑습니다. {{ user.username }}님!,
+
+계정인증을 위해 다음의 링크로 이동해 주세요.
+
+{{ url_for('auth.verify_user', token=token, _external=True) }}
+
+
+Easyprint

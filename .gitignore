@@ -1,0 +1,12 @@
+*.swp
+log/
+share
+*.pyc
+*.egg/
+*.egg-info
+__pycache__/
+tmp/
+gcode/
+modeling/
+*.rdb
+migrations/
