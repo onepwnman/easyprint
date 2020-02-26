@@ -45,12 +45,11 @@ class Printer(object):
     def __init__(self):
         self.power_pin = 16
         self.baudrate = 115200
-        self.power_on = False
         self.timeout = 1
         self.default_timeout = 1
         self.printing_timeout = self.default_timeout
         self.leveling_timeout = 30
-        self.heating_up_timeout = 600
+        self.heating_up_timeout = 1200
         self.timeout_flag = False
         self.STATE_NONE = 0
         self.STATE_PRINTER_POWER_OFF = 1
