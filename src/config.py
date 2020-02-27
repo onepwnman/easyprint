@@ -9,7 +9,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'u can never guess this looooooooooooong flag'
     RECAPTCHA_USE_SSL = True
-    MAX_CONTENT_LENGTH = 3 * 1024 * 1024
+    MAX_CONTENT_LENGTH = 1 * 1024 * 1024
     ALLOWED_FILE_NAME_LENGTH = 64
     SQLALCHEMY_DATABASE_URI = 'mysql://root@localhost/easyprint'
     SERVER_ADDRESS = '0.0.0.0'

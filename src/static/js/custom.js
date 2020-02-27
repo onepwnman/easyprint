@@ -65,7 +65,7 @@ if(window.document.getElementById('printing-area')) {
     const DROPZONE = new Dropzone("#dropzone", {
         clickable: '#addFiles',
         acceptedFiles: '.stl',
-        maxFilesize: 3, //MB
+        maxFilesize: 1, //MB
         parallelUploads: 5,
         previewTemplate: document.getElementById("template").innerHTML
     });
