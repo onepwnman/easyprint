@@ -11,15 +11,15 @@ from .. import db
 from . import home, get_alarm
 
 
-# 왼쪽 사이드바에 로그인 폼이 뜨는 페이지마다 아래의 데코레이터를 넣어준다. 
-# blueprint route 함수마다 **kwargs로 인자를 준다.
+# Put this decorator on every page which needs login form on their left sidebar
+# Route functions also need to add **kwargs argument
 def add_login_form(original_function):
     @wraps(original_function)
     def wrapper(*args, **kwargs):
+        # If user not logged in yet pass the login form through the kwargs argument
         if current_user.is_anonymous:
-            form = LoginForm()
-            # TODO: autologin feature
-            # TODO: 로그인 실패시 아이디는 form에 입력되어있어야함.
+            form = LoginForm() 
+            # When the post message is sended to the server
             if form.validate_on_submit():
                 with db_lock:
                     user = User.query.filter_by(email=form.email.data).first()
@@ -55,15 +55,16 @@ def add_login_form(original_function):
                            'text':'Try it again!',
                            'icon':'fas fa-exclamation-triangle'
                     })
+            # Pass form as 'form' key
             kwargs['form'] = form
 
+        # If user currently logged in then login form is not needed
         elif current_user.is_authenticated:
             kwargs['form'] = None
 
         return original_function(*args, **kwargs)
 
     return wrapper 
-
 
 
 @home.route('/', methods=['GET', 'POST'])
