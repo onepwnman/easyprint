@@ -53,3 +53,10 @@ _As i mentioned earlier easyprint server runs on the docker container on the ras
 While you're printing if the server receives a lot of requests or if the server is busy, you will not be guaranteed printing quality and sometime printer could be pause for 1 or 2 seconds.
 This is the fundamental issue of putting every feature on a single physical machine and in order to fix this issue you need to separate server on different machines._
 
+
+
+<br>
+
+Here's a link of this project 
+it's korean by the way 
+[https://onepwnman.github.io/Easyprint-Project/](https://onepwnman.github.io/Easyprint-Project/)
