@@ -57,6 +57,6 @@ This is the fundamental issue of putting every feature on a single physical mach
 
 <br>
 
-Here's a link of this project 
-it's korean by the way 
+Here's a link of this project    
+it's korean by the way      
 [https://onepwnman.github.io/Easyprint-Project/](https://onepwnman.github.io/Easyprint-Project/)
