@@ -29,7 +29,7 @@ Jinja2==2.10.3
 josepy==1.1.0
 keyring==10.1
 keyrings.alt==1.3
-Mako==1.1.0
+Mako==1.2.2
 MarkupSafe==1.1.1
 mock==2.0.0
 monotonic==1.5
