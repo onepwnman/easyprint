@@ -39,7 +39,7 @@ parsedatetime==2.1
 pathlib2==2.3.5
 pbr==1.10.0
 pluggy==0.13.1
-protobuf==3.11.2
+protobuf==3.18.3
 py==1.8.0
 pyasn1==0.1.9
 pycrypto==2.6.1
